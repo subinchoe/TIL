@@ -259,7 +259,7 @@
 | a - b             | 차집합 |
 | a \| b            | 합집합 |
 | a & b             | 교집합 |
-| a.intersection(b) | 차집합 |
+| a.difference(b)   | 차집합 |
 | a.union(b)        | 합집합 |
 | a.intersection(b) | 교집합 |
 
