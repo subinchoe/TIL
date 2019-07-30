@@ -1,28 +1,59 @@
 # CSS
 
-- HTML에서 구조화가 잘 되어있지 않으면 CSS는 말짱도루묵
+> HTML에서 구조화를 이루지 못했다면 CSS를 아무리 잘해도 소용이 없다!
+>
+> `ex` 
+>
+> ​	h1 {
+>
+> ​	color: blue;
+>
+> ​	fontsize: 10;
+>
+> ​	}
+>
+> ​	h1은 selector, color는 property, blue는 값
 
-h1{color:blue; fontsize:10}
+## CSS 활용하기
 
-h1은 셀렉터
+### 00_intro.html & 00_intro.css
 
-color는 프로퍼티
+#### 내부 스타일 시트 (Internal CSS)
 
-blue는 값
+- Inline
 
-### CSS 활용하기
+  - Inline은 지양하자. 앞으로 쓰일 일이 거의 없을 걸
 
-- inline은 금지!!!! 거의 안 쓸 거구
+    > Inline은 새로운 줄을 만들지 않고 필요한 너비만 차지하는 별로 좋지 않은 요소
+    >
+    > `ex` < h1 style="color:red;">CSS intro< /h1>
+    >
+    > h1 태그에 꾸미고 싶은 요소들을 다 집어넣으니 얼마나 불편하니!!!!
 
   ```html
+  <!DOCTYPE html>
+  <html lang="en">    
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+  </head>  
   <body>
       <h1 style="color:red;">CSS intro</h1>
-  </body>
+  </body>  
+  </html>
   ```
 
-- embbeding? 좀 쓸 거구
+- Embbeding
+
+  - 앞으로 쓰일 일이 좀 있을 걸
+
+    > `ex` body에 h2 태그를 열고 내용을 적었다면, 위의 head에서 style이라 쓰고 h2에 적용시키고 싶은 요소들을 중괄호로 열어 적는다.
 
   ```html
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,10 +69,17 @@ blue는 값
   <body>
       <h2>CSS is awesome</h2>
   </body>
+  </html>
   ```
 
-- link file(외부 참조) 많이 쓸거야
+  <br>
 
+#### 외부 스타일 시트 (External CSS)
+
+- Link file (외부 참조)
+
+  - 앞으로 쓰일 일이 좀 많을 걸
+  
   ```html
   <head>
       <meta charset="UTF-8">
@@ -52,15 +90,15 @@ blue는 값
   </head>
   <body>
       <p>Lorem ipsum dolor sit amet.</p>
-  </body>
+</body>
   ```
-
+  
   ```css
   p {
       color: green;
-  }
+}
   ```
-
+  
   > html에서 css를 불러와야함
   >
   > < head >의 맨 마지막 부분에서 링크를 불러오자!
