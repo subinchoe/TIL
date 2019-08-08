@@ -156,7 +156,7 @@ def new(request):
       <input type="text" class="form-control" id="content" name="content" placeholder="content">
     </div>
     <div class="form-group">
-      <label for="due-date">Content</label>
+      <label for="due-date">Due date</label>
       <input type="date" class="form-control" id="due-date" name="due-date" placeholder="due-date">
     </div>  
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -188,6 +188,13 @@ class Todo(models.Model):
     title = models.CharField(max_length = 50)
     content = models.CharField(max_length = 200)
     due_date = models.DateField()
+```
+
+### > migrate시켜주기.
+
+```python
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ### > views.py
@@ -248,6 +255,12 @@ from django.contrib import admin
 from .models import Todo
 # Register your models here.
 admin.site.register(Todo)
+```
+
+### > admin 계정 만들기 (id : subin, pw : subin)
+
+```python
+python manage.py createsuperuser
 ```
 
 ### > views.py
@@ -378,7 +391,7 @@ def detail(request, todo_id):
 {% block body %}
   <div class="jumbotron my-3">
     <h1 class="display-4">{{todo.title}}</h1>
-    <p class="lead">{{todo.content}}</p>
+    <p class="lead">{{todo.content}}</p>	
     <hr class="my-4">
     <p>{{todo.due_date}}</p>
     <a class="btn btn-info btn-lg" href="#" role="button">다시쓰기</a>
@@ -733,8 +746,6 @@ def update(request, todo_id):
 ```
 
 ### > views.py
-
-#### > def create 부분 & def update & def delete
 
 ```python
 from django.shortcuts import render, redirect
